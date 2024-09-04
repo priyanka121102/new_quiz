@@ -93,14 +93,16 @@ def show_results():
 root = tk.Tk()
 root.title("Python Quiz Game")
 
+new_label=tk.Label(root,text="WELCOME TO MY QUIZ GAME",wraplength=400, pady=20,bg="pink",fg="black")
+new_label.pack()
 # Create question label
-question_label = tk.Label(root, text="Click 'Next Question' to start the quiz!", wraplength=400, pady=20)
+question_label = tk.Label(root, text="Click 'Next Question' to start the quiz!", wraplength=400, pady=20,font='Arial')
 question_label.pack()
 
 # Create answer buttons
 answer_buttons = []
 for i in range(4):
-    button = tk.Button(root, text="", width=40, pady=10, state=tk.DISABLED, command=lambda i=i: check_answer(answer_buttons[i].cget("text")))
+    button = tk.Button(root, text="", width=40, pady=10, fg="black",bg="pink", command=lambda i=i: check_answer(answer_buttons[i].cget("text")))
     button.pack(pady=5)
     answer_buttons.append(button)
 
